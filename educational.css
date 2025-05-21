@@ -13,8 +13,12 @@ body {
 
 header {
   background-color: #541675;
+  top: 0;
+  left: 0;
+  right: 0;
   color: white;
   padding: 1rem;
+  position: fixed;
 }
 
 .header-top {
@@ -123,7 +127,10 @@ header {
 .mobile-nav a.active img {
   filter: brightness(0) saturate(100%) invert(54%) sepia(40%) saturate(2233%) hue-rotate(159deg) brightness(95%) contrast(97%);
 }
-
+.tablecontent
+{
+  padding-top: 5rem;
+}
 /* Mobile (<768px) */
 @media (max-width: 767px) {
   .mobile-nav {
