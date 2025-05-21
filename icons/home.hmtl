@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home.css">
+    <title>Wellcare Login</title>
+</head>
+<body>
+    <header>
+    <div class="header-top">
+      <div class="logo">
+        <div class="logo-box"></div>
+        <h1>Wellcare</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-home">
+    <div class="home-container">
+        <div class="home-form">
+            <label for="header-top">Need Consulting?</label>
+            <p class="label2">Hello user, how are you today? Do you want to view available therapist? Click the button below!</p>
+            <button class="consult">Get support</button>
+        </div>
+    </div>
+   </div>
+</body>
+</html>
