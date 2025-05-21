@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <title>Wellcare Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wellcare Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+     <header>
     <div class="header-top">
       <div class="logo">
         <div class="logo-box"></div>
         <h1>Wellcare</h1>
+        <nav class="top-nav desktop-nav">
+          <span class="active">Home</span>
+          <a href="forum.html"><span>Forum</span></a>
+          <a href="consult.html"><span>Consult</span></a>
+          <a href="edu.html"><span>Educational</span></a>
+          <a href="profile.html"><span>Profile</span></a>
+        </nav>
       </div>
     </div>
   </header>
 
   <div class="main-home">
-    <div class="home-container">
-        <div class="home-form">
-            <label for="header-top">Need Consulting?</label>
-            <p class="label2">Hello user, how are you today? Do you want to view available therapist? Click the button below!</p>
-            <button class="consult">Get support</button>
-        </div>
+    <div class="content-box">
+        <h1 class="content-title">Hello User, How are you today?</h1>
     </div>
-   </div>
+</div>
+
+<div class="main-home">
+    <div class="content-box">
+        <h1 class="content-title">Need consulting?</h1>
+         <p class="label2">View available therapists on the page below!</p>
+    <p class="content-info"><button class="consult">Get support</button></p>
+    </div>
+</div>
+
+   <nav class="mobile-nav">
+    <a href="home.html" class="active">
+      <img src="icons/home.png" alt="Home" />
+    </a>
+    <a href="forum.html">
+      <img src="icons/forum.png" alt="Forum" />
+    </a>
+    <a href="consult.html">
+      <img src="icons/consult.png" alt="Consult" />
+    </a>
+    <a href="edu.html">
+      <img src="icons/educontent.png" alt="Educational" />
+    </a>
+    <a href="profile.html">
+      <img src="icons/user.png" alt="Profile" />
+    </a>
+
+  </nav>
 </body>
 </html>
