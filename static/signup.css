@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  padding-bottom: 60px;
+}
+
+header {
+  background-color: #541675;
+  color: white;
+  padding: 1rem;
+}
+.main-signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+.signup-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin: 50px auto;
+    border: 2px solid #5a5a5a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.signup-tabs {
+    display: flex;
+    justify-content: center;
+    top: -20px;
+    margin-bottom: 10px;
+}
+.signup-tab {
+    background-color: #E0E0E0; /* Light Gray */
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+.signup-tab.active {
+    background-color: #4B0082; /* Deep Purple */
+    color: white;
+}
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-top: 10px;
+    text-align: left;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-button {
+    background-color: #4B0082; /* Deep Purple */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+    background-color: #3E0072; /* Darker Purple */
+}
+
+.login-prompt {
+    margin-top: 15px;
+}
+
+.login-prompt a {
+    color: #4B0082; /* Deep Purple */
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-box {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.desktop-nav {
+  display: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.desktop-nav span {
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+}
+
+.desktop-nav span.active,
+.desktop-nav span:hover {
+  background-color: transparent;
+  color: #99CCED;
+}
+
+.top-nav {
+  display: none;
+}

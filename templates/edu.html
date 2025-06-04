@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wellcare Educational</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='educational.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <header>
+    <div class="header-top">
+      <div class="logo">
+        <div class="logo-box"></div>
+        <h1>Wellcare</h1>
+        <nav class="top-nav desktop-nav">
+          <a href="{{ url_for('dashboard') }}"><span>Home</span></a>
+          <a href="{{ url_for('forum') }}"><span>Forum</span></a>
+          <a href="{{ url_for('consult') }}"><span>Consult</span></a>
+          <span class="active">Educational</span>
+          <a href="{{ url_for('home') }}"><span>Profile</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<div class="tablecontent">
+  {% for content in educational_contents %}
+   <a href="{{ url_for('view_edu', content_id=content['id']) }}" class="edu-link">
+      <div class="main-edu">
+        <div class="content-box">
+          <h1 class="content-title">{{ content['title'] }}</h1>
+          <p class="content-description">{{ content['description'] }}</p>
+          <p class="content-info">
+            Published {{ content['created_at'][:10] }} by {{ content['author'] }}
+          </p>
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+
+  {% if educational_contents|length == 0 %}
+    <p style="text-align: center;">No educational materials available yet.</p>
+  {% endif %}
+</div>
+
+<nav class="mobile-nav">
+    <a href="{{ url_for('dashboard') }}">
+      <img src="{{ url_for('static', filename='icons/home.png') }}" alt="Home" />
+    </a>
+    <a href="{{ url_for('forum') }}">
+      <img src="{{ url_for('static', filename='icons/forum.png') }}" alt="Forum" />
+    </a>
+    <a href="{{ url_for('consult') }}">
+      <img src="{{ url_for('static', filename='icons/consult.png') }}" alt="Consult" />
+    </a>
+    <a href="{{ url_for('edu') }}" class="active">
+      <img src="{{ url_for('static', filename='icons/educontent.png') }}" alt="Educational" />
+    </a>
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='icons/user.png') }}" alt="Profile" />
+    </a>
+  </nav>
+
+  <a href="{{ url_for('create_edu') }}" class="floating-btn">
+    <img src="{{ url_for('static', filename='icons/pen.png') }}" alt="Create Post">
+  </a>
+
+</body>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forum Replies - Wellcare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='forumreplies_style.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <div class="logo-box"></div>
+        <h1>Wellcare</h1>
+        <nav class="top-nav desktop-nav">
+          <a href="{{ url_for('dashboard') }}">Home</a>
+          <a href="{{ url_for('forum') }}" class="active">Forum</a>
+          <a href="{{ url_for('consult') }}">Consult</a>
+          <a href="{{ url_for('edu') }}">Educational</a>
+          <a href="{{ url_for('home') }}">Profile</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="original-post">
+      <div class="timestamp">{{ post['created_at'] }}</div>
+      <div class="post-header">
+        <div class="avatar"></div>
+        <div class="post-info">
+          <h3>{{ post['author'] }}</h3>
+          <p class="doc-id">Post ID: {{ post['id'] }}</p>
+        </div>
+        <div class="more-icon">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+      <div class="post-content">
+        <h2>{{ post['title'] }}</h2>
+        <p>{{ post['content'] }}</p>
+      </div>
+    </div>
+
+    <form method="POST" class="reply-input desktop-reply-input">
+      <textarea name="reply" required placeholder="Write your reply..."></textarea>
+      <button type="submit">Post Reply</button>
+    </form>
+
+    <div class="replies-section">
+      {% for reply in replies %}
+      <div class="reply-card">
+        <div class="timestamp">{{ reply['created_at'] }}</div>
+        <div class="reply-header">
+          <div class="avatar"></div>
+          <div class="reply-info">
+            <h4>{{ reply['author_email'] }}</h4>
+            <p class="doc-id">Reply ID: {{ reply['id'] }}</p>
+          </div>
+          <div class="more-icon">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="reply-content">
+          <p>{{ reply['reply_text'] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+
+  <form method="POST" class="reply-input mobile-reply-input">
+    <textarea name="reply" required placeholder="Write your reply..."></textarea>
+    <button type="submit">Post</button>
+  </form>
+
+  <nav class="mobile-nav">
+    <a href="{{ url_for('dashboard') }}">
+      <img src="{{ url_for('static', filename='icons/home.png') }}" alt="Home" />
+    </a>
+    <a href="{{ url_for('forum') }}" class="active">
+      <img src="{{ url_for('static', filename='icons/forum.png') }}" alt="Forum" />
+    </a>
+    <a href="{{ url_for('consult') }}">
+      <img src="{{ url_for('static', filename='icons/consult.png') }}" alt="Consult" />
+    </a>
+    <a href="{{ url_for('edu') }}">
+      <img src="{{ url_for('static', filename='icons/educontent.png') }}" alt="Educational" />
+    </a>
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='icons/user.png') }}" alt="Profile" />
+    </a>
+  </nav>
+</body>
+</html>

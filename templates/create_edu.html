@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Educational</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='credu.css') }}" />
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <div class="logo-box"></div>
+        <h1>Wellcare</h1>
+        <nav class="top-nav desktop-nav">
+          <a href="{{ url_for('dashboard') }}"><span>Home</span></a>
+          <a href="{{ url_for('forum') }}"><span>Forum</span></a>
+          <a href="{{ url_for('consult') }}"><span>Consult</span></a>
+          <a href="{{ url_for('edu') }}"><span class="active">Educational</span></a>
+          <a href="{{ url_for('home') }}"><span>Profile</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="form-container">
+      <h2>Create a Educational title</h2>
+      <form method="post" action="{{ url_for('create_edu') }}">
+        <input type="text" name="title" placeholder="Write a title" required />
+        <textarea name="description" rows="2" placeholder="Write something" required></textarea>
+        <textarea name="content" rows="6" placeholder="Write something" required></textarea>
+        <button type="submit">Post</button>
+      </form>
+    </div>
+  </main>
+
+  <nav class="mobile-nav">
+    <a href="{{ url_for('dashboard') }}">
+      <img src="{{ url_for('static', filename='icons/home.png') }}" alt="Home" />
+    </a>
+    <a href="{{ url_for('forum') }}" class="active">
+      <img src="{{ url_for('static', filename='icons/forum.png') }}" alt="Forum" />
+    </a>
+    <a href="{{ url_for('consult') }}">
+      <img src="{{ url_for('static', filename='icons/consult.png') }}" alt="Consult" />
+    </a>
+    <a href="{{ url_for('edu') }}">
+      <img src="{{ url_for('static', filename='icons/educontent.png') }}" alt="Educational" />
+    </a>
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='icons/user.png') }}" alt="Profile" />
+    </a>
+  </nav>
+</body>
+</html>
