@@ -7,18 +7,40 @@ body {
 
 /* Header */
 .header {
-  background-color: #6a1b9a;
+  background-color: #4b007d;
   color: white;
-  text-align: center;
-  padding: 1rem;
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.top-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.top-nav a.active,
+.top-nav a:hover {
+  color: #74bff7;
+}
+
 
 .logo {
   width: 40px;
@@ -157,4 +179,29 @@ body {
 .bottom-nav a.active img,
 .bottom-nav a:hover img {
   transform: scale(1.1);
+}
+
+/* Default: tampilkan navbar atas, sembunyikan navbar bawah */
+.top-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .top-nav {
+    display: none;
+  }
+
+  .bottom-nav {
+    display: flex;
+  }
+
+  .header {
+    justify-content: center;
+  }
 }
