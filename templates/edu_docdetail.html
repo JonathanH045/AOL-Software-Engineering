@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>          
+         <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>{{ content['title'] }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='viewedu.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <header>
+    <div class="header-top">
+     <div class="logo">
+        <img src="icons/Wellcare.png" class="logo"></img>
+      </div>
+        <h1>wellcare</h1>
+        <nav class="top-nav desktop-nav">
+          <a href="{{ url_for('dashboard') }}"><span>Home</span></a>
+          <a href="{{ url_for('forum') }}"><span>Forum</span></a>
+          <a href="{{ url_for('consult') }}"><span>Consult</span></a>
+          <a href="{{ url_for('edu') }}"><span class="active">Educational</span></a>
+          <a href="{{ url_for('home') }}"><span>Profile</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="doc-info">
+      <div class="avatar"></div>
+      <div class="doctor-details">
+        <div class="doctor-name">{{ content['doctor'] }}</div>
+        <div class="doc-id">Post ID: {{ content['id'] }}</div>
+      </div>
+    </div>
+
+    <div class="role">Psychologist</div>
+    <div class="label">Pasient consulted:</div>
+
+    <div class="content">
+      {{ content['description'] }}
+    </div>
+
+    <a href="{{ url_for('edu') }}" class="back-link">← Back to Educational Contents</a>
+  </div>
+</body>
+</html>
