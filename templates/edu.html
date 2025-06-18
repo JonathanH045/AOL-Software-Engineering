@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wellcare Educational</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='educational.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='forum_style.css') }}">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
      <header>
     <div class="header-top">
       <div class="logo">
-        <img src="icons/Wellcare.png" class="logo"></img>
+        <img src="{{ url_for('static', filename='icons/Wellcare.png') }}" class="logo"></img>
       </div>
         <h1>ellcare</h1>
         <nav class="top-nav desktop-nav">
@@ -21,7 +21,7 @@
           <a href="{{ url_for('forum') }}"><span>Forum</span></a>
           <a href="{{ url_for('consult') }}"><span>Consult</span></a>
           <span class="active">Educational</span>
-          <a href="{{ url_for('home') }}"><span>Profile</span></a>
+          <a href="{{ url_for('profile') }}"><span>Profile</span></a>
         </nav>
       </div>
     </div>
@@ -47,6 +47,10 @@
   {% endif %}
 </div>
 
+ <a href="{{ url_for('create_edu') }}" class="floating-btn">
+    <img src="{{ url_for('static', filename='icons/pen.png') }}" alt="Create Post">
+  </a>
+
 <nav class="mobile-nav">
     <a href="{{ url_for('dashboard') }}">
       <img src="{{ url_for('static', filename='icons/home.png') }}" alt="Home" />
@@ -60,13 +64,11 @@
     <a href="{{ url_for('edu') }}" class="active">
       <img src="{{ url_for('static', filename='icons/educontent.png') }}" alt="Educational" />
     </a>
-    <a href="{{ url_for('home') }}">
+    <a href="{{ url_for('profile') }}">
       <img src="{{ url_for('static', filename='icons/user.png') }}" alt="Profile" />
     </a>
   </nav>
 
-  <a href="{{ url_for('create_edu') }}" class="floating-btn">
-    <img src="{{ url_for('static', filename='icons/pen.png') }}" alt="Create Post">
-  </a>
+ 
 
 </body>

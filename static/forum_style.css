@@ -34,35 +34,38 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.logo-box {
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 6px;
+  margin-left: 24px;
 }
 
 .desktop-nav {
   display: none;
-  gap: 1.5rem;
+  gap: 2.5rem;
   align-items: center;
+  margin-left: 64px;
+}
+
+.desktop-nav a{
+  text-decoration:none
 }
 
 .desktop-nav span {
   cursor: pointer;
   color: white;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  transition: color 0.3s ease;
+  transition: 0.5s ease;
 }
 
 .desktop-nav span.active,
 .desktop-nav span:hover {
   background-color: transparent;
   color: #99CCED;
+  font-size: 1.6rem;
 }
 
 .top-nav {
@@ -91,6 +94,7 @@ header {
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   z-index: 999  ;
+  margin-top: 3rem;
 }
 
 .search-filter input,
@@ -120,22 +124,8 @@ header {
   margin-bottom: 1rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   border: 2px solid #33b5ff;
+}
 
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-.forum-card h3 a {
-  color: inherit;           /* inherit text color from parent */
-  text-decoration: none;    /* remove underline */
-  cursor: pointer;          /* show pointer cursor */
-  transition: color 0.3s ease;
-}
-.forum-card h3 a:hover,
-.forum-card h3 a:focus {
-  color: #541675;           /* or your preferred hover color */
-}
 .forum-header {
   display: flex;
   align-items: center;
@@ -224,6 +214,7 @@ a {
   justify-content: center;
 }
 
+
 .mobile-nav {
   display: none;
   position: fixed;
@@ -254,6 +245,136 @@ a {
 
 .mobile-nav a.active img {
   filter: brightness(0) saturate(100%) invert(54%) sepia(40%) saturate(2233%) hue-rotate(159deg) brightness(95%) contrast(97%);
+}
+
+.content-box {
+    background-color: #8E5AAA; 
+    color: white; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 10px;
+    text-align: left; 
+    width: 80%; 
+    max-width: 600px;
+}
+
+.content-title {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+.content-description {
+    font-size: 18px; 
+    margin-bottom: 15px; 
+}
+.content-info {
+    font-size: 14px; 
+    color: #D3D3D3; 
+}
+
+.main-edu{
+  display: flex;
+  justify-content: center;
+}
+
+.tablecontent
+{
+  padding-top: 8rem;
+}
+
+.main-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 1rem 1rem;
+}
+  
+.help-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: #541675;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+  
+.category {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+  
+.category h3 {
+  background-color: #541675;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+  
+.doctor-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #8848aa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+  
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+  
+.doc-info {
+  flex: 1;
+  margin-left: 1rem;
+}
+  
+.doc-info p {
+  margin: 0.2rem 0;
+}
+  
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+  
+.tag {
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+  
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+  
+.green {
+  background-color: limegreen;
+}
+  
+.red {
+  background-color: red;
 }
 
 @media (max-width: 767px) {

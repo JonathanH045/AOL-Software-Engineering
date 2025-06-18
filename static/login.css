@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Inter', sans-serif;
 }
+
 body {
   background-color: #f5f5f5;
   color: #333;
@@ -21,82 +22,89 @@ header {
   align-items: center;
   height: calc(100vh - 80px);
 }
+
 .login-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    margin: 50px auto;
-    border: 2px solid #5a5a5a;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  margin: 50px auto;
+  border: 2px solid #5a5a5a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .login-tabs {
-    display: flex;
-    justify-content: center;
-    top: -20px;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  top: -20px;
+  margin-bottom: 10px;
 }
+
 .login-tab {
-    background-color: #E0E0E0; /* Light Gray */
-    border: none;
-    border-radius: 5px;
-    color: black;
-    cursor: pointer;
-    padding: 10px;
-    margin: 0 5px;
-    transition: background-color 0.3s;
+  background-color: #E0E0E0; /* Light Gray */
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 5px;
+  transition: background-color 0.3s;
 }
+
 .login-tab.active {
-    background-color: #4B0082; /* Deep Purple */
-    color: white;
+  background-color: #4B0082; /* Deep Purple */
+  color: white;
 }
+
 .login-form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
+
 label {
-    margin-top: 10px;
-    text-align: left;
+  margin-top: 10px;
+  text-align: left;
 }
 
 input {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .login-button {
-    background-color: #4B0082; /* Deep Purple */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #4B0082; /* Deep Purple */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .login-button:hover {
-    background-color: #3E0072; /* Darker Purple */
+  background-color: #3E0072; /* Darker Purple */
 }
 
 .signup-prompt {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .signup-prompt a {
-    color: #4B0082; /* Deep Purple */
-    text-decoration: none;
+  color: #4B0082; /* Deep Purple */
+  text-decoration: none;
 }
 
 .signup-prompt a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
 .header-top {
   display: flex;
   align-items: center;
@@ -109,35 +117,17 @@ input {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.logo-box {
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 6px;
+  margin-left: 24px;
 }
 
 .desktop-nav {
   display: none;
-  gap: 1.5rem;
+  gap: 2.5rem;
   align-items: center;
-}
-
-.desktop-nav span {
-  cursor: pointer;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  transition: color 0.3s ease;
-}
-
-.desktop-nav span.active,
-.desktop-nav span:hover {
-  background-color: transparent;
-  color: #99CCED;
+  margin-left: 64px;
 }
 
 .top-nav {

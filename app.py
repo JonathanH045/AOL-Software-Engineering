@@ -38,6 +38,14 @@ def init_db():
                             author TEXT NOT NULL,
                             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                         )''')
+        conn.execute('''CREATE TABLE IF NOT EXISTS doctors (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            name TEXT NOT NULL,
+                            doc_id TEXT UNIQUE NOT NULL,
+                            specialization TEXT CHECK(specialization IN ('Psychologist', 'Therapist')) NOT NULL,
+                            work_status BOOLEAN NOT NULL,
+                            photo_url TEXT
+                        )''')
 init_db()
 
 def login_required(f):
@@ -162,7 +170,16 @@ def forum_detail(post_id):
 @app.route('/consult')
 @login_required
 def consult():
-    return render_template('consult.html')
+    with sqlite3.connect('database.db') as conn:
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        psychologists = cursor.execute(
+            "SELECT * FROM doctors WHERE specialization = 'Psychologist'"
+        ).fetchall()
+        therapists = cursor.execute(
+            "SELECT * FROM doctors WHERE specialization = 'Therapist'"
+        ).fetchall()
+    return render_template('consult.html', psychologists=psychologists, therapists=therapists)
 
 @app.route('/create_edu', methods=['GET', 'POST'])
 @login_required
@@ -192,5 +209,46 @@ def view_edu(content_id):
     # Fetch content by ID and render a detail page
     content = get_content_by_id(content_id)  # Implement this function
     return render_template('edu_detail.html', content=content)
+
+@app.route('/profile')
+def profile():
+    email = session['email']
+
+    with sqlite3.connect('database.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT email FROM users WHERE email = ?", (email,))
+        user = cursor.fetchone()
+
+    if user:
+        return render_template('profile.html', username=email, email=email)
+    else:
+        flash("User not found", "danger")
+        return redirect(url_for('dashboard'))
+
+@app.route('/add_doctor', methods=['GET', 'POST'])
+@login_required
+def add_doctor():
+    if not session.get('is_admin'):
+        flash("Only admins can add doctors.", "danger")
+        return redirect(url_for('consult'))
+
+    if request.method == 'POST':
+        name = request.form['name']
+        doc_id = request.form['doc_id']
+        specialization = request.form['specialization']
+        work_status = int(request.form['work_status'])
+        photo_url = request.form.get('photo_url') or None
+
+        with sqlite3.connect('database.db') as conn:
+            conn.execute('''
+                INSERT INTO doctors (name, doc_id, specialization, work_status, photo_url)
+                VALUES (?, ?, ?, ?, ?)''',
+                (name, doc_id, specialization, work_status, photo_url))
+            conn.commit()
+        flash("Doctor added successfully.", "success")
+        return redirect(url_for('consult'))
+
+    return render_template('adddr.html')
 if __name__ == '__main__':
     app.run(debug=True)
+

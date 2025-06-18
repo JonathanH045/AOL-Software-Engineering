@@ -74,7 +74,6 @@ header {
   color: white;
   padding: 1rem;
   position: fixed;
-  z-index: 1000;
 }
 
 .header-top {
@@ -89,6 +88,10 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 6px;
+  margin-left: 24px;
 }
 
 .logo-box {
@@ -100,26 +103,32 @@ header {
 
 .desktop-nav {
   display: none;
-  gap: 1.5rem;
+  gap: 2.5rem;
   align-items: center;
+  margin-left: 64px;
+}
+
+.desktop-nav a{
+  text-decoration:none
 }
 
 .desktop-nav span {
   cursor: pointer;
   color: white;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  transition: color 0.3s ease;
+  transition: 0.5s ease;
 }
 
 .desktop-nav span.active,
 .desktop-nav span:hover {
   background-color: transparent;
   color: #99CCED;
+  font-size: 1.6rem;
 }
-
+  
 .top-nav {
   display: none;
 }

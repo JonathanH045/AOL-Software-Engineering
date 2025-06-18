@@ -11,7 +11,7 @@
   <header>
     <div class="header-top">
       <div class="logo">
-        <img src="icons/Wellcare.png" class="logo"></img>
+        <img src="{{ url_for('static', filename='icons/Wellcare.png') }}" class="logo"></img>
       </div>
         <h1>ellcare</h1>
         <nav class="top-nav desktop-nav">
@@ -19,7 +19,7 @@
           <span class="active">Forum</span></a>
           <a href="{{ url_for('consult') }}"><span>Consult</span></a>
           <a href="{{ url_for('edu') }}"><span>Educational</span></a>
-          <a href="{{ url_for('home') }}"><span>Profile</span></a>
+          <a href="{{ url_for('profile') }}"><span>Profile</span></a>
         </nav>
       </div>
     </div>
@@ -49,7 +49,7 @@
     <a href="{{ url_for('edu') }}">
       <img src="{{ url_for('static', filename='icons/educontent.png') }}" alt="Educational" />
     </a>
-    <a href="{{ url_for('home') }}">
+    <a href="{{ url_for('profile') }}">
       <img src="{{ url_for('static', filename='icons/user.png') }}" alt="Profile" />
     </a>
   </nav>

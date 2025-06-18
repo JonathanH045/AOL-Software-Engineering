@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Doctor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='credu.css') }}">
+</head>
+<body>
+    <header>
+    <div class="header-top">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='icons/Wellcare.png') }}" class="logo"></img>
+      </div>
+        <h1>ellcare</h1>
+        <nav class="top-nav desktop-nav">
+          <a href="{{ url_for('dashboard') }}"><span>Home</span></a>
+          <a href="{{ url_for('forum') }}"><span>Forum</span></a>
+          <a href="{{ url_for('consult') }}"><span>Consult</span></a>
+          <a href="{{ url_for('edu') }}"><span class="active">Educational</span></a>
+          <a href="{{ url_for('profile') }}"><span>Profile</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="form-container">
+      <h2>Add New Doctor</h2>
+      <form method="POST">
+    <label>Doctor Name</label>
+    <input type="text" name="name" required>
+
+    <label>Doctor ID</label>
+    <input type="text" name="doc_id" required>
+
+    <label>Specialization</label>
+    <select name="specialization" required>
+      <option value="Psychologist">Psychologist</option>
+      <option value="Therapist">Therapist</option>
+    </select>
+
+    <label>Work Status</label>
+    <select name="work_status">
+      <option value="1">Available</option>
+      <option value="0">Unavailable</option>
+    </select>
+
+    <button type="submit">Add Doctor</button>
+  </form>
+    </div>
+  </main>
+  
+</body>
+</html>

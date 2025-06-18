@@ -34,35 +34,38 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.logo-box {
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 6px;
+  margin-left: 24px;
 }
 
 .desktop-nav {
   display: none;
-  gap: 1.5rem;
+  gap: 2.5rem;
   align-items: center;
+  margin-left: 64px;
+}
+
+.desktop-nav a{
+  text-decoration:none
 }
 
 .desktop-nav span {
   cursor: pointer;
   color: white;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  transition: color 0.3s ease;
+  transition: 0.5s ease;
 }
 
 .desktop-nav span.active,
 .desktop-nav span:hover {
   background-color: transparent;
   color: #99CCED;
+  font-size: 1.6rem;
 }
 
 .top-nav {
@@ -79,11 +82,13 @@ header {
     width: 80%; 
     max-width: 600px;
 }
+
 .content-title {
     font-size: 24px; 
     font-weight: bold; 
     margin-bottom: 10px; 
 }
+
 .content-description {
     font-size: 18px; 
     margin-bottom: 15px; 
@@ -92,8 +97,19 @@ header {
     font-size: 14px; 
     color: #D3D3D3; 
 }
+
 .main-edu{
   display: flex;
+  justify-content: center;
+}
+.more-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -130,8 +146,33 @@ header {
 }
 .tablecontent
 {
-  padding-top: 5rem;
+  padding-top: 8rem;
 }
+/* Mobile (<768px) */
+@media (max-width: 767px) {
+  .mobile-nav {
+    display: flex;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .header-top {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .header-top {
+    justify-content: flex-start;
+  }
+}
+
 .floating-btn {
   position: fixed;
   bottom: 20px;
@@ -151,51 +192,11 @@ header {
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
-.content-title a {
-  text-decoration: none;
-  color: inherit;
-}
+
 .floating-btn:hover {
   background-color: #541675;
 }
 
 .floating-btn img {
   filter: brightness(0) invert(1);
-}
-a.edu-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-a.edu-link:hover .main-edu {
-  background-color: #f0f0f0;
-  transition: background-color 0.3s ease;
-}
-/* Mobile (<768px) */
-@media (max-width: 767px) {
-  .mobile-nav {
-    display: flex;
-  }
-  .desktop-nav {
-    display: none;
-  }
-  .header-top {
-    justify-content: center;
-  }
-  .floating-btn {
-    bottom: 80px;
-  }
-}
-
-@media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-  }
-  .mobile-nav {
-    display: none;
-  }
-  .header-top {
-    justify-content: flex-start;
-  }
 }

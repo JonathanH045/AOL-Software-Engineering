@@ -3,45 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wellcare Home</title>
+  <title>Wellcare Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-     <header>
+  <header>
     <div class="header-top">
-     <div class="logo">
+      <div class="logo">
         <img src="{{ url_for('static', filename='icons/Wellcare.png') }}" class="logo"></img>
       </div>
         <h1>ellcare</h1>
         <nav class="top-nav desktop-nav">
-          <span class="active">Home</span>
+          <a href="{{ url_for('home') }}"><span>Home</span></a>
           <a href="{{ url_for('forum') }}"><span>Forum</span></a>
           <a href="{{ url_for('consult') }}"><span>Consult</span></a>
           <a href="{{ url_for('edu') }}"><span>Educational</span></a>
-          <a href="{{ url_for('profile') }}"><span>Profile</span></a>
+          <a><span class="active">Profile</span></a>
         </nav>
       </div>
     </div>
   </header>
 
-  <div class="main-home">
+  <div class="main-avatar">
+    <img src="/static/icons/avatar.png" class="avatar"></img>
+  </div>
+  <div class="main-profile">
     <div class="content-box">
-        <h1 class="content-title">Hello User, How are you today?</h1>
+      <h2>E-mail</h2>
+      <a class="profile">{{ email }}</a>
+      <a href="{{ url_for('login') }}"><p class="content-info"><button class="consult">Sign Out</button></p></a>
     </div>
-</div>
-
-<div class="main-home2">
-    <div class="content-box">
-        <h1 class="content-title">Need consulting?</h1>
-         <p class="label2">View available therapists on the page below!</p>
-    <a href="{{ url_for('consult') }}"><p class="content-info"><button class="consult">Get support</button></p></a>
-    </div>
-</div>
+  </div>
 
    <nav class="mobile-nav">
-    <a href="{{ url_for('dashboard') }}" class="active">
+    <a href="{{ url_for('dashboard') }}">
       <img src="{{ url_for('static', filename='icons/home.png') }}" alt="Home" />
     </a>
     <a href="{{ url_for('forum') }}">
@@ -53,7 +50,7 @@
     <a href="{{ url_for('edu') }}">
       <img src="{{ url_for('static', filename='icons/educontent.png') }}" alt="Educational" />
     </a>
-    <a href="{{ url_for('profile') }}">
+    <a href="{{ url_for('profile') }}" class="active">
       <img src="{{ url_for('static', filename='icons/user.png') }}" alt="Profile" />
     </a>
 
