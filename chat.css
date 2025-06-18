@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  padding-bottom: 120px; 
+}
+
+/* Header */
+.header {
+  background-color: #6a1b9a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Doctor Info */
+.doctor-info {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 10px;
+}
+
+.doctor-info .avatar {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.doctor-name {
+  font-weight: bold;
+}
+
+.doctor-id {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* Chat Area */
+.chat-container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.chat-body {
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Chat Row */
+.chat-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.chat-row.left {
+  justify-content: flex-start;
+}
+
+.chat-row.right {
+  justify-content: flex-end;
+}
+
+/* Chat Bubble */
+.chat-bubble {
+  max-width: 70%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.bubble-dark {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+.bubble-light {
+  background-color: #8E5AAA;
+  color: white;
+}
+
+.typing {
+  text-align: center;
+  width: 40px;
+}
+
+/* Chat Input */
+.chat-input {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.chat-input button {
+  background-color: #6a1b9a;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 50%;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #6a0dad; /* purple background */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+}
+
+.bottom-nav a img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Make image white */
+  transition: 0.3s ease;
+}
+
+.bottom-nav a.active img,
+.bottom-nav a:hover img {
+  transform: scale(1.1);
+}
